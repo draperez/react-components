@@ -9,9 +9,7 @@ on:
 
 jobs:
   Publish-NPM-Package-With-GitHub-Actions:
-    runs-on: self-hosted
-    container:
-      image: node:18
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
