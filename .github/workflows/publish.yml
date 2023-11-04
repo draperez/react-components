@@ -1,0 +1,27 @@
+# Interesting video: https://youtu.be/yfBtjLxn_6k?si=pUa21S1yIYHcvzwt
+
+name: Publish NPM
+run-name: ${{ github.actor }} is publishing @draperez/react-components to NPM using GitHub Actions 🚀
+on:
+# You can execute a job when a new release is created.
+  release:
+    types: [created]
+
+jobs:
+  Publish-NPM-Package-With-GitHub-Actions:
+    runs-on: self-hosted
+    container:
+      image: node:18
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+        working-directory: ./react-components
+      # Publish to NPM
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+      - run: echo "🍏 This job's status is ${{ job.status }}."

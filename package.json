@@ -1,0 +1,29 @@
+{
+  "name": "@draperez/react-components",
+  "version": "1.0.0",
+  "description": "React Component library by @draperez",
+  "main": "dist/index.js",
+  "keywords": ["react", "bootstrap", "component", "package", "typescript"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/draperez/react-components.git"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Alain PEREZ RIAÑO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/draperez/react-components/issues"
+  },
+  "homepage": "https://github.com/draperez/react-components#readme",
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^3",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-icons": "^3",
+    "typescript": "^5"
+  }
+}
