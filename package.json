@@ -1,6 +1,6 @@
 {
   "name": "@draperez/react-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Component library by @draperez",
   "main": "dist/index.js",
   "keywords": ["react", "bootstrap", "component", "package", "typescript"],
