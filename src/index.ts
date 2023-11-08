@@ -1,3 +1,1 @@
-import { ReactBSPagination } from "./components/ReactBSPagination";
-
-export default ReactBSPagination;
+export * from "./components/ReactBSPagination";

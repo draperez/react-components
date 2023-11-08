@@ -5,7 +5,12 @@
         "jsx": "react",
         "strict": true,
         "esModuleInterop": true,
-        "outDir": "./dist",
+        "outDir": "dist",
         "declaration": true,
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "test"
+    ]
 }
