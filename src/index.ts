@@ -1,1 +1,1 @@
-export * from "./components/ReactBSPagination";
+export { ReactBSPagination } from "./components/ReactBSPagination";

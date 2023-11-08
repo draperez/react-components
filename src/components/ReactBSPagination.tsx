@@ -1,5 +1,4 @@
 import React from "react";
-import {MdFirstPage, MdChevronLeft, MdChevronRight, MdLastPage} from "react-icons/md";
 
 interface Props {
   "totalPages": number,
@@ -24,16 +23,16 @@ export const ReactBSPagination = ({ totalPages, currentPage, onPageClick }: Prop
       {totalPages > 0 && <ul className="pagination justify-content-center flex-wrap">
         <li
           className={currentPage === 1 ? "page-item disabled" : "page-item"}
-          onClick={() => {if (currentPage !== 1) onPageClick(1)}}>
-          <button className="page-link" role="button" title="Lehena" disabled={currentPage === 1}>
-            <MdFirstPage />
+          onClick={() => { if (currentPage !== 1) onPageClick(1) }}>
+          <button className="page-link" role="button" title="First" disabled={currentPage === 1}>
+            &#x00AB;
           </button>
         </li>
         <li
           className={currentPage === 1 ? "page-item disabled" : "page-item"}
-          onClick={() => { if(currentPage > 1) onPageClick(currentPage - 1)}}>
-          <button className="page-link" role="button" title="Aurrekoa">
-            <MdChevronLeft />
+          onClick={() => { if (currentPage > 1) onPageClick(currentPage - 1) }}>
+          <button className="page-link" role="button" title="Previous">
+            &lsaquo;
           </button>
         </li>
         {minShowingPage > 1 && <li className="page-item disabled">
@@ -43,7 +42,7 @@ export const ReactBSPagination = ({ totalPages, currentPage, onPageClick }: Prop
           return <li
             className={i === currentPage ? "page-item active" : "page-item"}
             key={i}
-            onClick={() => {if(i !== currentPage) onPageClick(i)}}>
+            onClick={() => { if (i !== currentPage) onPageClick(i) }}>
             <button className="page-link" role="button">{i}</button>
           </li>
         })}
@@ -51,17 +50,17 @@ export const ReactBSPagination = ({ totalPages, currentPage, onPageClick }: Prop
           <button className="page-link" role="button">...</button>
         </li>}
         <li
-          className={totalPages === currentPage ? "page-item disabled" : "page-item"} 
-          onClick={() => { if(currentPage < totalPages) onPageClick(currentPage + 1)}}>
-          <button className="page-link" role="button" title="Hurrengoa" disabled={totalPages === currentPage}>
-            <MdChevronRight />
+          className={totalPages === currentPage ? "page-item disabled" : "page-item"}
+          onClick={() => { if (currentPage < totalPages) onPageClick(currentPage + 1) }}>
+          <button className="page-link" role="button" title="Next" disabled={totalPages === currentPage}>
+            &rsaquo;
           </button>
         </li>
         <li
           className={totalPages === currentPage ? "page-item disabled" : "page-item"}
-          onClick={() => { if(currentPage !== totalPages) onPageClick(totalPages)}}>
-          <button className="page-link" role="button" title="Azkena" disabled={totalPages === currentPage}>
-            <MdLastPage />
+          onClick={() => { if (currentPage !== totalPages) onPageClick(totalPages) }}>
+          <button className="page-link" role="button" title="Last" disabled={totalPages === currentPage}>
+            &#x00BB;
           </button>
         </li>
       </ul>}

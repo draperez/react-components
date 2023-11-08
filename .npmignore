@@ -1,0 +1,6 @@
+jest.config.json
+test/
+.github
+.devcontainer
+src/
+node_modules/
