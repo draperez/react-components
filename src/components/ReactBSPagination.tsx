@@ -1,26 +1,40 @@
 import React from "react";
-
 interface Props {
-  "totalPages": number,
-  "currentPage": number,
-  "onPageClick": (pageNumber: number) => void
+  totalPages: number,
+  currentPage: number,
+  size?: number
+  buttonSize?: "sm" | "md" | "lg",
+  wrap?: boolean,
+  justifyContent?: "start" | "end" | "center" | "between" | "around" | "evenly",
+  onPageClick: (pageNumber: number) => void
 }
 
-export const ReactBSPagination = ({ totalPages, currentPage, onPageClick }: Props) => {
+export const ReactBSPagination = ({ totalPages, currentPage, size = 5, buttonSize = "md", wrap, justifyContent = "center", onPageClick }: Props) => {
   const allPages: number[] = [...Array(totalPages + 1).keys()];
+
+  const partSize = Math.floor(size/2);
+
   const showingPages: number[] = allPages.filter(i =>
-    i > 0 && (  // Pages start from 1
-      (i >= currentPage - 2 && i <= currentPage + 2) ||  // previous 2 and next 2 pages
-      (i >= totalPages - 5 && currentPage >= totalPages - 3) ||  // Last 6 pages 
-      (i <= 6 && currentPage <= 4)  // First 6 pages
+    i > 0 && (  // No page 0, pages start from 1
+      (i >= currentPage - partSize && i <= currentPage + partSize) ||  // previous 2 and next 2 pages
+      (i >= totalPages - size && currentPage >= totalPages - (size - partSize)) ||  // Last 6 pages 
+      (i <= (size + 1) && currentPage <= (size + 1 - partSize))  // First 6 pages
     )
   );
+
   const minShowingPage = showingPages[0];
   const maxShowingPage = showingPages[showingPages.length - 1];
+  
+  const paginationClassNames = [
+    "pagination",
+    "justify-content-"+justifyContent,
+    buttonSize !== "md" ? "pagination-"+buttonSize : "",
+    wrap ? "flex-wrap" : ""
+  ];
 
   return (
     <nav>
-      {totalPages > 0 && <ul className="pagination justify-content-center flex-wrap">
+      {totalPages > 0 && <ul className={paginationClassNames.join(" ")}>
         <li
           className={currentPage === 1 ? "page-item disabled" : "page-item"}
           onClick={() => { if (currentPage !== 1) onPageClick(1) }}>
