@@ -8,8 +8,19 @@ function example() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const sizes = [...Array(25).keys()];
-  const buttonSizes = ["sm", "md", "lg"];
-  const justifyContents = ["start", "end", "center", "between", "around", "evenly"]
+  const buttonSizes = [
+    "sm" as const,
+    "md" as const,
+    "lg" as const
+  ];
+  const justifyContents = [
+    "start" as const,
+    "end" as const,
+    "center" as const,
+    "between" as const,
+    "around" as const,
+    "evenly" as const
+  ]
 
   return (
     <>
