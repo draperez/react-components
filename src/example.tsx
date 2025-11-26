@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ReactBSPagination } from './components/ReactBSPagination';
-import React from 'react';
 
 
 function example() {

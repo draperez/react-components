@@ -1,10 +1,16 @@
 {
   "name": "@draperez/react-components",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "React Component library by @draperez",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "keywords": ["react", "bootstrap", "component", "package", "typescript"],
+  "keywords": [
+    "react",
+    "bootstrap",
+    "component",
+    "package",
+    "typescript"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/draperez/react-components.git"
@@ -19,10 +25,14 @@
   },
   "homepage": "https://github.com/draperez/react-components#readme",
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "typescript": "^5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.4"
   }
 }
