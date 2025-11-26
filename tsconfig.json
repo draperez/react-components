@@ -2,11 +2,14 @@
     "compilerOptions": {
         "target": "es2018",
         "module": "CommonJS",
+        "moduleResolution": "node",
         "jsx": "react-jsx",
         "lib": ["es2018", "es7", "es6", "dom"],
         "strict": true,
         "esModuleInterop": true,
         "outDir": "dist",
         "declaration": true,
+        "skipLibCheck": true,
+        "types": ["react"]
     }
 }
